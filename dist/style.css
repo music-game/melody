@@ -19,7 +19,7 @@ button {
   color: #000;
   display: inline-flex;
   margin: 0;
-  padding: 12px 20px;
+  padding: 8px 20px;
   font: inherit;
   font-weight: 700;
 }
@@ -69,15 +69,15 @@ button.delete:not([disabled]):hover {
   justify-content: center;
 }
 .title {
-  font-size: 2em;
-  padding: 10px;
+  font-size: 1.5em;
+  padding: 2px;
 }
 .difficulties {
   display: flex;
   justify-content: space-between;
   width: 50%;
   margin: auto;
-  padding: 5px;
+  padding: 2px;
 }
 
 .middle {
@@ -86,7 +86,7 @@ button.delete:not([disabled]):hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 20px;
+  margin: 10px;
 }
 
 .lower {
@@ -104,7 +104,7 @@ button.delete:not([disabled]):hover {
 
 .solution {
   position: relative;
-  padding: 20px;
+  padding: 5px 25px;
   font-size: 1.5rem;
   width: 80%;
 }
@@ -115,7 +115,7 @@ button.delete:not([disabled]):hover {
   display: flex;
   font-weight: 600;
   justify-content: space-between;
-  padding: 20px;
+  padding: 5px 20px;
 }
 
 .container {
@@ -154,12 +154,12 @@ button.delete:not([disabled]):hover {
   background: #eee;
   border-radius: 5px;
   display: grid;
-  gap: 8px;
+  gap: 4px;
   grid-template-columns: repeat(5, minmax(0, 1fr));
   grid-template-rows: repeat(6, minmax(0, 1fr));
   justify-content: center;
-  padding: 8px;
-  width: 80%;
+  padding: 4px;
+  width: 70%;
 }
 
 .actions {
@@ -167,7 +167,7 @@ button.delete:not([disabled]):hover {
   justify-content: space-between;
   width: 90%;
   margin: auto;
-  padding: 20px;
+  padding: 5px 20px 20px 20px;
 }
 
 .keyboard {
@@ -182,9 +182,9 @@ button.delete:not([disabled]):hover {
 .keyboard.sharp {
   background: none;
   width: 82%;
-  gap: 7%;
+  gap: 4%;
   position: relative;
-  height: 100px;
+  height: 90px;
   top: -150px;
 }
 .keyboard button {
