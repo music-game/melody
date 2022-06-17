@@ -69,8 +69,8 @@ button.delete:not([disabled]):hover {
   justify-content: center;
 }
 .title {
-  font-size: 1.5em;
-  padding: 2px;
+  font-size: 1.8em;
+  padding: 5px;
 }
 .difficulties {
   display: flex;
@@ -215,10 +215,10 @@ button.delete:not([disabled]):hover {
   background: #333;
 }
 .keyboard button.sharp[disabled] {
-  background: rgb(204, 204, 204);
+  background: rgb(117, 117, 117);
 }
 .keyboard button.sharp[disabled]:hover {
-  background: rgb(204, 204, 204);
+  background: rgb(117, 117, 117);
 }
 .keyboard button.esharp[disabled] {
   background: none;
