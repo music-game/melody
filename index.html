@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="./dist/style.css" />
+    <title>Melody Game</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="dist/playnote.js"></script>
+    <script src="dist/audiosynth.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <div class="board">
+        <div class="upper">
+          <div class="title">
+            <strong>Melody Game</strong>
+          </div>
+          <div class="difficulties">
+            <button class="easy">Easy</button>
+            <button class="hard selected">Hard</button>
+          </div>
+        </div>
+        <div class="middle">
+          <div class="guesses">
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+            <div class="container">
+              <div class="note"></div>
+            </div>
+          </div>
+          <div class="solution" hidden="true">
+            <div class="notes rightnotes"></div>
+          </div>
+        </div>
+        <div class="lower">
+          <div class="actions">
+            <button class="delete" disabled="true">&#8592;</button>
+            <button class="reference">C</button>
+            <button class="play">Listen</button>
+            <button class="submit" disabled="true">Submit</button>
+          </div>
+          <div class="keyboard">
+            <button class="c key">C</button>
+            <button class="d key">D</button>
+            <button class="e key">E</button>
+            <button class="f key">F</button>
+            <button class="g key">G</button>
+            <button class="a key">A</button>
+            <button class="b key">B</button>
+          </div>
+          <div class="keyboard sharp">
+            <button class="csharp key sharp">C#</button>
+            <button class="dsharp key sharp">D#</button>
+            <button disabled="true" class="esharp key sharp"></button>
+            <button class="fsharp key sharp">F#</button>
+            <button class="gsharp key sharp">G#</button>
+            <button class="asharp key sharp">A#</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
