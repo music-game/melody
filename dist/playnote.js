@@ -136,13 +136,14 @@ class NoteGrid {
 }
 
 $(document).ready(function () {
+  const noteDur = 2; //note sustain time (seconds)
+  const noteDel = 500; //time between notes (miliseconds)
+  const volume = 0.5; //volume of piano [0-1]
+
   //initialize the synthesizer upon page load
   var piano = Synth.createInstrument("piano");
   Synth.setSampleRate(40000); // sets sample rate [Hz]
-  Synth.setVolume(0.5); // set volume [0-1]
-
-  const noteDur = 2; //note sustain time (seconds)
-  const noteDel = 500; //time between notes (miliseconds)
+  Synth.setVolume(volume); // set volume [0-1]
 
   let melody = []; //stores the correct melody
 
@@ -157,6 +158,9 @@ $(document).ready(function () {
 
   //Play Button Pressed: Play the 5-note melody
   $("button.play").click(function () {
+    Synth.setVolume(0);
+    piano.play("A", 1, 1);
+    Synth.setVolume(volume);
     (function myLoop(i) {
       setTimeout(function () {
         let note = melody[5 - i];
