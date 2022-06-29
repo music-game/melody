@@ -1,10 +1,5 @@
 /// <reference path="../typings/globals/jquery/index.d.ts" />
 
-/*TODO: 
-Add purple boxes for next to notes
-Update styles
-*/
-
 const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 const easyNotes = ["C", "D", "E", "F", "G", "A", "B"];
 
