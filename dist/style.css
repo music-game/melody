@@ -173,36 +173,80 @@ button.delete:not([disabled]):hover {
 .keyboard {
   background: purple;
   border-radius: 12px;
-  display: flex;
   gap: 4px;
   height: 150px;
   padding: 5px;
   width: 100%;
+  display: grid;
+  grid-template-columns: repeat(7, 2fr 1fr 2fr);
+  grid-template-rows: 2fr 1fr;
 }
-.keyboard.sharp {
-  background: none;
-  width: 82%;
-  gap: 4%;
-  position: relative;
-  height: 90px;
-  top: -150px;
+
+.key.c {
+  grid-column-start: 1;
+  grid-column-end: 4;
 }
+.key.csharp {
+  grid-column-start: 3;
+  grid-column-end: 5;
+}
+.key.d {
+  grid-column-start: 4;
+  grid-column-end: 7;
+}
+.key.dsharp {
+  grid-column-start: 6;
+  grid-column-end: 8;
+}
+.key.e {
+  grid-column-start: 7;
+  grid-column-end: 10;
+}
+.key.f {
+  grid-column-start: 10;
+  grid-column-end: 13;
+}
+.key.fsharp {
+  grid-column-start: 12;
+  grid-column-end: 14;
+}
+.key.g {
+  grid-column-start: 13;
+  grid-column-end: 16;
+}
+.key.gsharp {
+  grid-column-start: 15;
+  grid-column-end: 17;
+}
+.key.a {
+  grid-column-start: 16;
+  grid-column-end: 19;
+}
+.key.asharp {
+  grid-column-start: 18;
+  grid-column-end: 20;
+}
+.key.b {
+  grid-column-start: 19;
+  grid-column-end: 22;
+}
+
 .keyboard button {
   align-items: flex-end;
   border: none;
   border-radius: 0 0 6px 6px;
-  display: flex;
   font-size: 1rem;
   font-weight: 700;
   justify-content: center;
   padding: 0.5em 0;
-  width: 100%;
 }
 .keyboard button,
 .keyboard button:not(.sharp) {
   background: #fff;
   border-radius: 6px;
   color: #000;
+  grid-row-start: 1;
+  grid-row-end: 3;
 }
 .keyboard button:not(.sharp):hover {
   background: #ccc;
@@ -210,6 +254,8 @@ button.delete:not([disabled]):hover {
 .keyboard button.sharp {
   background: #000;
   color: #fff;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
 .keyboard button.sharp:hover {
   background: #333;
@@ -219,9 +265,4 @@ button.delete:not([disabled]):hover {
 }
 .keyboard button.sharp[disabled]:hover {
   background: rgb(117, 117, 117);
-}
-.keyboard button.esharp[disabled] {
-  background: none;
-  color: none;
-  z-index: -10;
 }
