@@ -3,6 +3,15 @@
 const notes = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
 const easyNotes = ["C", "D", "E", "F", "G", "A", "B"];
 
+var sfPiano = null;
+var ac = null;
+
+async function startPiano() {
+  //initialize the soundfont upon page load
+  ac = new AudioContext();
+  sfPiano = await Soundfont.instrument(ac, "acoustic_grand_piano");
+}
+
 function randomNote(easy = false) {
   if (easy) {
     let i = Math.floor(Math.random() * 7);
@@ -131,14 +140,12 @@ class NoteGrid {
 }
 
 $(document).ready(function () {
-  const noteDur = 2; //note sustain time (seconds)
-  const noteDel = 500; //time between notes (miliseconds)
-  const volume = 0.5; //volume of piano [0-1]
+  const noteDur = 0.5; //note sustain time (seconds)
+  const noteDel = 0.5; //time between notes (seconds)
+  const volume = 5; //how loud to play the notes
 
-  //initialize the synthesizer upon page load
-  var piano = Synth.createInstrument("piano");
-  Synth.setSampleRate(40000); // sets sample rate [Hz]
-  Synth.setVolume(volume); // set volume [0-1]
+  //initialize the sound font
+  startPiano();
 
   let melody = []; //stores the correct melody
 
@@ -153,21 +160,18 @@ $(document).ready(function () {
 
   //Play Button Pressed: Play the 5-note melody
   $("button.play").click(function () {
-    Synth.setVolume(0);
-    piano.play("A", 1, 1);
-    Synth.setVolume(volume);
-    (function myLoop(i) {
-      setTimeout(function () {
-        let note = melody[5 - i];
-        piano.play(note, 4, noteDur); //  your code here
-        if (--i) myLoop(i); //  decrement i and call myLoop again if i > 0
-      }, noteDel);
-    })(5);
+    sfPiano.schedule(ac.currentTime, [
+      { time: noteDel * 0, note: melody[0] + "4", duration: noteDur, gain: volume },
+      { time: noteDel * 1, note: melody[1] + "4", duration: noteDur, gain: volume },
+      { time: noteDel * 2, note: melody[2] + "4", duration: noteDur, gain: volume },
+      { time: noteDel * 3, note: melody[3] + "4", duration: noteDur, gain: volume },
+      { time: noteDel * 4, note: melody[4] + "4", duration: noteDur, gain: volume },
+    ]);
   });
 
   //C Reference Button Pressed: Play C4 note
   $("button.reference").click(function () {
-    piano.play("C", 4, noteDur);
+    sfPiano.play("C4", ac.currentTime, { duration: 1.5, gain: volume });
   });
 
   //Piano Key Pressed: Put the note in the next box unless we are at the end of the row
