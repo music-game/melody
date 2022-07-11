@@ -8,6 +8,7 @@ var ac = null;
 
 async function startPiano() {
   //initialize the soundfont upon page load
+  var AudioContext = window.AudioContext || window.webkitAudioContext;
   ac = new AudioContext();
   sfPiano = await Soundfont.instrument(ac, "acoustic_grand_piano");
 }
