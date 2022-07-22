@@ -11,7 +11,7 @@ async function startPiano()
   //initialize the soundfont upon page load
   var AudioContext = window.AudioContext || window.webkitAudioContext;
   ac = new AudioContext();
-  sfPiano = await Soundfont.instrument( ac, "/dist/soundfonts/acoustic_grand_piano-mp3.js" );
+  sfPiano = await Soundfont.instrument( ac, "dist/soundfonts/acoustic_grand_piano-mp3.js" );
 }
 
 function randomNote( easy = false )
