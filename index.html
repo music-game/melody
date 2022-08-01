@@ -12,16 +12,20 @@
 
 			gtag("config", "G-RDM27698RV");
 		</script>
-		<link rel="shortcut icon" href="dist/music.ico" />
+		<link rel="shortcut icon" href="music.ico" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 		<title>Melody Game</title>
+		<link rel="manifest" href="manifest.json" />
 		<script src="jquery.min.js"></script>
 		<script src="soundfont-player.js"></script>
 		<script src="acoustic_grand_piano-mp3.js"></script>
-		<script src="playnote.js?version=6"></script>
+		<script src="playnote.js"></script>
 		<link rel="stylesheet" href="style.css" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<script>
+			navigator.serviceWorker.register("sw.js");
+		</script>
 		<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
 	</head>
 
